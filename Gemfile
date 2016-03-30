@@ -53,3 +53,5 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'bootstrap-generators'
 gem 'bootstrap-sass-extras'
+
+gem 'active_bootstrap_skin'
