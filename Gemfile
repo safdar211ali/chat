@@ -56,6 +56,6 @@ gem 'bootstrap-sass-extras'
 gem 'activeadmin'
 gem 'devise'
 
-gem 'active_bootstrap_skin'
+
 
 
