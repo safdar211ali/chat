@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
-  permit_params :email, :password, :password_confirmation
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+  permit_params :name,:displayname,:urole, :email, :password, :password_confirmation
 
   index do
     selectable_column
@@ -29,4 +30,10 @@ ActiveAdmin.register User do
     f.actions
   end
 
+  def configure_permitted_parameters
+    # Fields for sign up
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name ,:displayname,:urole) }
+    # Fields for editing an existing account
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name ,:displayname,:urole) }
+  end
 end
